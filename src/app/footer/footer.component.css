@@ -1,0 +1,16 @@
+footer#footer {
+    background-color: #dee0e2;
+    color: #454a4c
+}
+
+footer#footer .footer-top {
+    border-top: 6px solid #c0c3c6;
+}
+
+footer#footer .footer-middle {
+    margin-bottom: 10px;
+}
+
+footer#footer .footer-bottom {
+    margin-bottom: 10px;
+}

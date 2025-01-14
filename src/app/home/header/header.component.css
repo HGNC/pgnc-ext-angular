@@ -1,0 +1,28 @@
+.navbar {
+    --txt-color: #fff;
+}
+
+fa-icon {
+    color: var(--txt-color);
+}
+
+.nav-link {
+    color: var(--txt-color);
+}
+
+.navbar-toggler {
+    color: var(--txt-color);
+    border-color: var(--txt-color);
+}
+
+.navbar > .container-fluid {
+   justify-content: flex-end;
+}
+
+
+
+.disabled-link {
+    pointer-events: none;
+    cursor: default;
+    color: gray;
+}

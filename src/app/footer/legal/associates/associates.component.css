@@ -1,0 +1,115 @@
+.footer-logo-block {
+    width: 276px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.doe-block {
+    width: 196px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.cbi-block {
+    width: 128px;
+    margin: 0 auto;
+}
+
+.uoc-block {
+    width: 273px;
+    margin: 20px auto;
+}
+
+.hgnc-block {
+    width: 172px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+img.footerlogosimage {
+    height: 56px;
+}
+
+.doe-block img.footerlogosimage {
+    height: 100px;
+}
+
+.cbi-block img.footerlogosimage {
+    height: 110px;
+}
+
+.hgnc-block img.footerlogosimage {
+    height: 72px;
+}
+
+@media (min-width: 768px) {
+    .footer-logo-block {
+        width: 465px;
+    }
+    .doe-block, .cbi-block, .uoc-block, .hgnc-block {
+        display: inline-block;
+    }
+    .uoc-block {
+        margin-right: 20px;
+    }
+    .first-associate-set {
+        width: 324px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-logo-block {
+        width: 958px;
+    }
+    .first-associate-set,
+    .second-associate-set {
+        display: inline-block;
+        width: auto;
+    }
+    .doe-block,
+    .cbi-block,
+    .uoc-block,
+    .hgnc-block {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .footer-logo-block {
+        width: 1090px;
+    }
+    
+    .doe-block,
+    .cbi-block,
+    .uoc-block,
+    .hgnc-block {
+        margin-right: 40px;
+        margin-left: 40px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .footer-logo-block {
+        width: 100%;
+    }
+    
+    .doe-block,
+    .cbi-block,
+    .uoc-block,
+    .hgnc-block {
+        margin-right: 60px;
+        margin-left: 60px;
+    }
+
+    .doe-block {
+        margin-left: 0px;
+    }
+
+    .hgnc-block {
+        margin-right: 0px;
+    }
+
+    
+}

@@ -1,0 +1,151 @@
+.jumbotron {
+    color: white;
+    margin-bottom: auto;
+    background-color: #800000;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 100%;
+}
+
+.jumbotron>.container {
+    padding-top: 15px;
+    padding-bottom: 25px;
+    height: 100%;
+    position: relative;
+}
+
+.jumbotron .logo {
+    width: 100%;
+}
+
+.jumbotron .pgnc-logo-block {
+    width: 230px;
+    margin: 0 auto;
+}
+
+.jumbotron h1 {
+    margin-top: 0;
+    font-size: 30px;
+}
+
+.jumbotron .tag-line {
+    font-size: 18px;
+    color: #ebc741;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
+}
+
+.larger-screens {
+    position: absolute;
+    top: calc(100% - (100vh / 1.2));
+    left: 0%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+.jumbotron .search-container {
+    padding: 0 30px;
+}
+
+.jumbotron div.search-bar {
+    width: 100%;
+    padding: 12px 0;
+    margin: auto;
+}
+
+.home-interface {
+    width: 318px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .jumbotron>.container {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .jumbotron .larger-screens {
+        display: table;
+        width: 100%;
+    }
+
+    .jumbotron .home-interface {
+        width: 100%;
+    }
+
+    .jumbotron .pgnc-logo-block {
+        width: 280px;
+    }
+
+    .jumbotron .tag-line {
+        display: block;
+        width: 100%;
+    }
+
+    .jumbotron .tag-line {
+        font-size: 28px;
+    }
+
+    .jumbotron div.search-bar,
+    .jumbotron div.updated {
+        width: 100%;
+        margin: 2px 0 0;
+    }
+}
+
+@media (min-width: 1024px) {
+ 
+}
+
+@media (min-width: 1440px) {
+ 
+}
+
+@media (min-width: 2560px) {
+ 
+}
+
+@media (max-height: 400px) {
+    .jumbotron .tag-line {
+        font-size: 18px;
+    }
+
+    .jumbotron .pgnc-logo-block {
+        width: 200px;
+    }
+
+    .jumbotron .larger-screens {
+        top: calc(100% - (100vh / 1.2));
+    }
+
+    .jumbotron div.search-bar {
+        width: 75%;
+        margin: auto;
+        padding: 10px 0;
+    }
+}
+
+@media (max-height: 240px) {
+    .jumbotron .larger-screens {
+        top: calc(100% - (100vh / 1.2) - 32px);
+    }
+}
+
+@media (min-height: 401px){
+    .jumbotron .larger-screens {
+        top: calc(100% - (100vh / 2) - 150px);
+    }
+}
+
+@media (min-height: 1000px){
+    .jumbotron .larger-screens {
+        top: calc(100% - (100vh / 1.5));
+    }
+}
