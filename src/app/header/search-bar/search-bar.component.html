@@ -1,1 +1,21 @@
-<p>search-bar works!</p>
+<div class="input-group">
+    <div class="query-group">
+        <input
+            type="text"
+            id="q"
+            class="form-control"
+            name="query"
+            placeholder="Search symbols, keywords or IDs"
+        />
+        <div class="input-group-addon help">
+            <a class="help" title="Help">
+                <fa-icon [icon]="faQuestionCircle" class="help"></fa-icon>
+            </a>
+        </div>
+        <div class="input-group-btn search">
+            <button class="btn btn-default" name="submit">
+                <fa-icon [icon]="faSearch" class="submit"></fa-icon>
+            </button>
+        </div>
+    </div>
+</div>

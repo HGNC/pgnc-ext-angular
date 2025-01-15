@@ -1,5 +1,8 @@
 .navbar {
     --txt-color: #fff;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
 }
 
 fa-icon {
@@ -13,16 +16,39 @@ fa-icon {
 .navbar-toggler {
     color: var(--txt-color);
     border-color: var(--txt-color);
+    margin-left: auto;
 }
 
 .navbar > .container-fluid {
    justify-content: flex-end;
 }
 
-
+.navbar-collapse {
+    margin-top: 10px;
+    background-color: rgb(128, 0, 0);
+    border: 1px solid black;
+    padding: 0 10px;
+}
 
 .disabled-link {
     pointer-events: none;
     cursor: default;
     color: gray;
+}
+
+@media (min-width: 768px) {
+    app-nav {
+        width: 100%;
+    }
+
+    header nav {
+        width: 100%;
+    }
+
+    .navbar-collapse {
+        margin-top: 0;
+        padding: 0;
+        border: 0;
+    }
+    
 }

@@ -1,0 +1,59 @@
+.navbar-genenames {
+    background-color: #800;
+    color: white;
+}
+.navbar-brand img {
+    height: 30px;
+}
+
+.navbar {
+    --txt-color: #fff;
+}
+
+fa-icon {
+    color: var(--txt-color);
+}
+
+.nav-link {
+    color: var(--txt-color);
+}
+
+.navbar-toggler {
+    color: var(--txt-color);
+    border-color: var(--txt-color);
+}
+
+.navbar-brand {
+    flex-basis: 70%;
+}
+
+.search-bar {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    
+    .navbar-expand-md {
+        padding-bottom: 0;
+    }
+    .navbar-expand-md {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .navbar-brand {
+        flex-basis: 40%;
+    }
+
+    .search-bar-comp {
+        flex-basis: 56%
+    }
+    .nav-comp {
+        flex-basis: 100%
+    }
+
+    app-nav {
+        width: 100%;
+    }
+}
+

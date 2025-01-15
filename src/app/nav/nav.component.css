@@ -1,0 +1,13 @@
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.nav-item:last-child .nav-link {
+    color: #ffc21b;
+}
+
+@media (min-width: 768px) {
+    .nav-item:last-child {
+        margin-left: auto;
+    }
+}

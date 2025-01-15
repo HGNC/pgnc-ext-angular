@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home-search-bar',
@@ -10,4 +10,5 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class HomeSearchBarComponent {
     faSearch = faSearch;
+    faQuestionCircle = faQuestionCircle;
 }
