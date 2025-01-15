@@ -1,0 +1,29 @@
+<nav class="navbar navbar-genenames">
+    <div class="container">
+        <div class="navbar-header">
+            <button
+                class="navbar-toggle collapse"
+                data-toggle="collapse"
+                data-target=".navbar-collapse"
+                aria-expanded="false"
+            >
+                <span class="sr-only">Toggle navigation</span>
+                <fa-icon [icon]="faBars"></fa-icon>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img
+                    alt="HGNC"
+                    src="/img/pgnc/pgnc-logo-dark-bckgrnd-small.svg"
+                />
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <div class="navbar-form navbar-right search-bar" role="search">
+                <app-search-bar></app-search-bar>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse">
+            <app-nav></app-nav>
+        </div>
+    </div>
+</nav>
