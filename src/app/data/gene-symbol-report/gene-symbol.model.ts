@@ -1,0 +1,9 @@
+export interface GeneSymbol {
+    symbol: {
+        symbol: string;
+    };
+    creationDate: Date;
+    modDate: Date | null;
+    withdrawnDate: Date | null;
+    type: string;
+}

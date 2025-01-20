@@ -20,3 +20,9 @@ body, div.page, html {
     background-color: #fff;
     box-sizing: border-box;
 }
+
+.navbar-nav .nav-link.deactivated,
+.dropdown-item.deactivated,
+a.deactivated {
+    color: grey !important;
+}
