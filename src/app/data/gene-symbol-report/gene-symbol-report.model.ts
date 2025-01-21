@@ -55,7 +55,7 @@ export interface GeneSymbolReport {
                     name: string
                 }
             }
-        }] | null,
+        }] | undefined,
         geneLocations: [ GeneLocation ] | null,
     } | null,
     apiVersion: string

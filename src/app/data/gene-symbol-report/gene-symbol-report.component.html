@@ -115,6 +115,10 @@
             </div>
         </div>
     </div>
+    <app-xref-resources
+        [geneXrefs]="xrefs"
+        [symbol]="appSymbol?.symbol?.symbol"
+    ></app-xref-resources>
     } @else if (!report()) {
     <p>No report found</p>
     }

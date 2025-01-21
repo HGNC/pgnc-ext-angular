@@ -1,0 +1,25 @@
+<div class="card">
+    <h3 class="card-header">External resources for {{ symbol }}</h3>
+    <div class="card-body">
+        <div class="key-val-pairs">
+            @for (geneXref of geneXrefs ?? []; track geneXref){ @if
+            (isValidResourceName(geneXref.xref.externalResource.name)) {
+            <span class="key">
+                {{ geneXref.xref.externalResource.name }}
+                <a class="clickable help" title="Help">
+                    <fa-icon [icon]="faQuestionCircle"></fa-icon>
+                </a>
+            </span>
+            <span class="val"
+                ><a
+                    href="{{
+                        xrefURLS[geneXref.xref.externalResource.name] +
+                            geneXref.xref.displayId
+                    }}"
+                    >{{ geneXref.xref.displayId }}</a
+                >
+            </span>
+            } }
+        </div>
+    </div>
+</div>
