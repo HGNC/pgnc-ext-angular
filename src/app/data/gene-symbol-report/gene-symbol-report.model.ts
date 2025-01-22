@@ -1,6 +1,7 @@
 import { GeneSymbol } from "./gene-symbol.model"
 import { GeneName } from "./gene-name.model"
 import { GeneLocation } from "./gene-location.model"
+import { Xref } from "./xref-resources/xref-resources.model"
 
 export interface GeneSymbolReport {
     data: {
@@ -13,8 +14,8 @@ export interface GeneSymbolReport {
             commonName: string,
             scientificName: string,
         },
-        geneNames: [ GeneName ] | null,
-        geneSymbols: [ GeneSymbol ] | null,
+        geneNames: [ GeneName ],
+        geneSymbols: [ GeneSymbol ],
         geneLocusTypes: [{
             creationDate: Date,
             modDate: Date | null,
@@ -42,20 +43,7 @@ export interface GeneSymbolReport {
             previousId: number,
             date: Date,
         }] | null,
-        geneXrefs: [{
-            geneId: number,
-            xrefId: number,
-            creationDate: Date,
-            withdrawnDate: Date | null,
-            status: string,
-            source: string,
-            xref: {
-                displayId: string,
-                externalResource: {
-                    name: string
-                }
-            }
-        }] | undefined,
+        geneXrefs: Xref[] | undefined,
         geneLocations: [ GeneLocation ] | null,
     } | null,
     apiVersion: string

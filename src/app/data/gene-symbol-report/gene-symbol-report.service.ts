@@ -2,6 +2,7 @@ import { inject, Injectable, signal } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { GeneSymbolReport } from "./gene-symbol-report.model";
 import { catchError, Observable, throwError } from "rxjs";
+import { delay } from "rxjs/operators";
 import { AuthService } from "../../common/services/auth.service";
 
 @Injectable({
@@ -22,19 +23,22 @@ export class GeneReportService {
         return this.httpClient.get<GeneSymbolReport>(
             `/api/gene/${pgncId}`,
             {
-                headers: new HttpHeaders({
-                    'Accept': 'application/json',
-                    'Authorization': 'Bearer ' + this.authService.getJwt()
-                })
+            headers: new HttpHeaders({
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + this.authService.getJwt()
+            })
             }
-        ).pipe(catchError(
+        ).pipe(
+            // delay(10000), // Add 30 second delay
+            catchError(
             (error) => {
                 console.error(error);
                 return throwError(
-                    () =>
-                        new Error('Problem found when fetching data. Please try again later')
+                () =>
+                    new Error('Problem found when fetching data. Please try again later')
                 )
             }
-        ));
+            )
+        );
     }
 }

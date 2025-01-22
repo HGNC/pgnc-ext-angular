@@ -1,11 +1,22 @@
+.card,
+.card-header {
+    border-color: #fab800;
+}
+
 .card {
     margin-bottom: 2ch;
 }
+
+.card-header {
+    background-color: #fab800;
+}
+
 .key-val-pairs {
-    display: grid;
-    grid-template-columns: auto;
+  display: grid;
+  grid-template-columns: auto;
     row-gap: 0;
 }
+
 .key {
     font-weight: bold;
     justify-self: start;
@@ -15,12 +26,6 @@
     justify-self: start;
     margin-bottom: 1ch;
     padding-left: 1ch;
-}
-
-.val ul {
-    list-style-type:none;
-    margin: 0;
-    padding: 0;
 }
 
 @media (min-width: 576px) {
@@ -38,13 +43,5 @@
     .val {
         justify-self: start;
         margin: 0;
-    }
-}
-
-@media (min-width: 768px) {
-    .key-val-pairs {
-        grid-template-columns: 24ch auto 20ch auto;
-        column-gap: 2ch;
-        row-gap: 1ch;
     }
 }

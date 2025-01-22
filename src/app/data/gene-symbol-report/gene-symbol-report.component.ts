@@ -9,11 +9,12 @@ import { GeneName } from './gene-name.model';
 import { GeneLocation } from './gene-location.model';
 import { Xref } from './xref-resources/xref-resources.model';
 import { XrefComponent } from './xref-resources/xref-resources.component';
+import { PgncDataComponent } from './pgnc-data/pgnc-data.component';
 
 
 @Component({
   selector: 'app-gene-symbol-report',
-  imports: [HeaderComponent, XrefComponent, FontAwesomeModule],
+  imports: [HeaderComponent, PgncDataComponent, XrefComponent, FontAwesomeModule],
   templateUrl: './gene-symbol-report.component.html',
   styleUrl: './gene-symbol-report.component.css'
 })
@@ -28,34 +29,27 @@ export class GeneSymbolReportComponent implements OnInit {
     error = signal<string | undefined>(undefined);
     private geneSymbolReportService = inject(GeneReportService);
     private destroyRef = inject(DestroyRef);
-    appSymbol: GeneSymbol | undefined;
-    appName: GeneName | undefined;
-    prevSymbols: GeneSymbol[] | undefined;
-    prevNames: GeneName[] | undefined;
-    aliasSymbols: GeneSymbol[] | undefined;
-    aliasNames: GeneName[] | undefined;
-    location: GeneLocation | undefined;
+
     xrefs: Xref[] | undefined;
+    result!: GeneSymbolReport;
+    appSymbol!: string;
 
     ngOnInit() {
         this.isFetching.set(true);
+        
         const subscription = this.geneSymbolReportService
             .getReportById(this.id)
             .subscribe({
                 next: (result) => {
                     this.report.set(result);
-                    this.appSymbol = result.data?.geneSymbols?.find((geneSymbol) => { return geneSymbol.type === 'approved'; });
-                    this.appName = result.data?.geneNames?.find((geneName) => { return geneName.type === 'approved'; });
-                    this.prevSymbols = result.data?.geneSymbols?.filter((geneSymbol) => { return geneSymbol.type === 'previous'; });
-                    this.prevNames = result.data?.geneNames?.filter((geneName) => { return geneName.type === 'previous'; });
-                    this.aliasSymbols = result.data?.geneSymbols?.filter((geneSymbol) => { return geneSymbol.type === 'alias'; });
-                    this.aliasNames = result.data?.geneNames?.filter((geneName) => { return geneName.type === 'alias'; });
-                    this.location = result.data?.geneLocations?.find(
-                        (geneLocation) => {
-                            return geneLocation.location.type === 'primary assembly' && geneLocation.location.coordSystem === 'chromosome';
-                        }
-                    );
-                    this.xrefs = result.data?.geneXrefs as Xref[];
+                    this.result = result;
+                    if (this.result.data?.geneSymbols) {
+                        this.appSymbol = this.result.data.geneSymbols.find(
+                            (geneSymbol) => {
+                                return geneSymbol.type === 'approved';
+                            }
+                        )?.symbol.symbol || '';
+                    }
                 },  
                 error: (err: Error) => {
                     this.error.set(err.message);
